@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5383c5ee81141f74f8c05c78f3f4367b, type: 3}
   m_Name: Charmander
   m_EditorClassIdentifier: 
-  pokemonName: Charmander
+  name: 
   description: 
   frontSprite: {fileID: 21300000, guid: cd259d9d4f8ba2749a16d1cc64d46bec, type: 3}
   backSprite: {fileID: 21300000, guid: ed8e1d9976a1fd94d961840d8f6e7764, type: 3}
@@ -24,3 +24,10 @@ MonoBehaviour:
   spAttack: 60
   spDefence: 50
   speed: 65
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: ca543fc4f04ad7843af7e4b03674d4c4, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: e1677249fc1ac0f43ac2f30b187ee2c0, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: e9927bf89a47bc947968590e9cfe0c13, type: 2}
+    level: 5
