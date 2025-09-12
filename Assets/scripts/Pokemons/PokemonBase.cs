@@ -4,68 +4,145 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Pokemon", menuName = "Pokemon/Create new pokemon")]
 public class PokemonBase : ScriptableObject
 {
-    [SerializeField] private string name;
+    [SerializeField] string name;
 
     [TextArea]
-    [SerializeField] private string description;
+    [SerializeField] string description;
 
-    [SerializeField] private Sprite frontSprite;
-    [SerializeField] private Sprite backSprite;
+    [SerializeField] Sprite frontSprite;
+    [SerializeField] Sprite backSprite;
 
-    [SerializeField] private PokemonType type1;
-    [SerializeField] private PokemonType type2;
+    [SerializeField] PokemonType type1;
+    [SerializeField] PokemonType type2;
 
-    // Base stats
-    [SerializeField] private int maxHp;
-    [SerializeField] private int attack;
-    [SerializeField] private int defence;
-    [SerializeField] private int spAttack;
-    [SerializeField] private int spDefence;
-    [SerializeField] private int speed;
+    // base stats for pokemons
+    [SerializeField] int maxHp;
+    [SerializeField] int attack;
+    [SerializeField] int defence;
+    [SerializeField] int spAttack;
+    [SerializeField] int spDefence;
+    [SerializeField] int speed;
 
-    [SerializeField] private List<LearnableMove> learnableMoves;
+    [SerializeField] List<LearnableMove> learnableMoves;
 
-    public string Name => name;
-    public string Description => description;
-    public Sprite FrontSprite => frontSprite;
-    public Sprite BackSprite => backSprite;
-    public PokemonType Type1 => type1;
-    public PokemonType Type2 => type2;
-    public int MaxHp => maxHp;
-    public int Attack => attack;
-    public int Defence => defence;
-    public int SpAttack => spAttack;
-    public int SpDefence => spDefence;
-    public int Speed => speed;
-    public List<LearnableMove> LearnableMoves => learnableMoves;
+    public string Name {
+        get { return name; }
+    }
+
+    public string Description {
+        get { return description; }
+    }
+
+    public Sprite FrontSprite {
+        get { return frontSprite; }
+    }
+
+    public Sprite BackSprite {
+        get { return backSprite; }
+    }
+
+    public PokemonType Type1 {
+        get { return type1; }
+    }
+
+    public PokemonType Type2 {
+        get { return type2; }
+    }
+
+    public int MaxHp {
+        get { return maxHp; }
+    }
+
+    public int Attack {
+        get { return attack; }
+    }
+
+    public int Defence {
+        get { return defence; }
+    }
+
+    public int SpAttack {
+        get { return spAttack; }
+    }
+
+    public int SpDefence {
+        get { return spDefence; }
+    }
+
+    public int Speed {
+        get { return speed; }
+    }
+
+    public List<LearnableMove> LearnableMoves {
+        get { return learnableMoves; }
+    }
 }
 
 [System.Serializable]
 public class LearnableMove
 {
-    [SerializeField] private MoveBase moveBase;
-    [SerializeField] private int level;
+    [SerializeField] MoveBase moveBase;
+    [SerializeField] int level;
 
-    public MoveBase Base => moveBase;
-    public int Level => level;
+    public MoveBase Base {
+        get { return moveBase; }
+    }
+
+    public int Level {
+        get { return level; }
+    }
 }
 
 public enum PokemonType
 {
     None,
     Normal,
-    Bug,
-    Dragon,
-    Electric,
-    Fighting,
     Fire,
-    Flying,
-    Ghost,
+    Water,
+    Electric,
     Grass,
-    Ground,
     Ice,
+    Fighting,
     Poison,
+    Ground,
+    Flying,
     Psychic,
+    Bug,
     Rock,
-    Water
+    Ghost,
+    Dragon
+}
+
+public class TypeChart
+{
+    private static readonly float[][] chart =
+    {
+        //                  NOR  FIR  WAT   ELE  GRA  ICE  FIG  POI  GRO  FLY  PSY  BUG  ROC  GHO  DRA
+        /*NOR*/new float[] { 1f,  1f,   1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f, 0.5f, 0f,  1f },
+        /*FIR*/new float[] { 1f, 0.5f, 0.5f, 1f,  2f,  2f,  1f,  1f,  1f,  1f,  1f,  2f, 0.5f, 1f, 0.5f },
+        /*WAT*/new float[] { 1f,  2f,  0.5f, 2f, 0.5f, 1f,  1f,  1f,  2f,  1f,  1f,  1f,  2f,  1f, 0.5f },
+        /*ELE*/new float[] { 1f,  1f,   2f, 0.5f,0.5f, 2f,  1f,  1f,  0f,  2f,  1f,  1f,  1f,  1f, 0.5f },
+        /*GRA*/new float[] { 1f, 0.5f,  2f,  2f, 0.5f, 1f,  1f, 0.5f, 2f, 0.5f, 1f, 0.5f, 2f,  1f, 0.5f },
+        /*ICE*/new float[] { 1f, 0.5f, 0.5f, 1f,  2f, 0.5f, 1f,  1f,  2f,  2f,  1f,  1f,  1f,  1f,  2f },
+        /*FIG*/new float[] { 2f,  1f,   1f,  1f,  1f,  2f,  1f, 0.5f, 1f, 0.5f, 0.5f, 0.5f, 2f, 0f, 1f },
+        /*POI*/new float[] { 1f,  1f,   1f,  1f,  2f,  1f,  1f, 0.5f, 0.5f, 1f, 1f,  1f, 0.5f, 0.5f, 1f },
+        /*GRO*/new float[] { 1f,  2f,   1f,  2f, 0.5f, 1f,  1f,  2f,  1f,  0f,  1f, 0.5f, 2f,  1f,  1f },
+        /*FLY*/new float[] { 1f,  1f,   1f, 0.5f, 2f,  1f,  2f,  1f,  1f,  1f,  1f,  2f, 0.5f, 1f,  1f },
+        /*PSY*/new float[] { 1f,  1f,   1f,  1f,  1f,  1f,  2f,  2f,  1f,  1f, 0.5f, 1f,  1f,  1f,  1f },
+        /*BUG*/new float[] { 1f, 0.5f,  1f,  1f,  2f, 1f, 0.5f, 0.5f, 1f, 0.5f, 2f,  1f,  1f, 0.5f, 1f },
+        /*ROC*/new float[] { 1f,  2f,   1f,  1f,  1f,  2f, 0.5f, 1f, 0.5f, 2f,  1f,  2f,  1f,  1f,  1f },
+        /*GHO*/new float[] { 0f,  1f,   1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  2f,  1f,  1f,  2f, 1f },
+        /*DRA*/new float[] { 1f,  1f,   1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  1f,  2f }
+    };
+
+    public static float GetEffectiveness(PokemonType attackType, PokemonType defenceType)
+    {
+        if (attackType == PokemonType.None || defenceType == PokemonType.None)
+            return 1;
+
+        int row = (int)attackType - 1;
+        int col = (int)defenceType - 1;
+
+        return chart[row][col];
+    }
 }
