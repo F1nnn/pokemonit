@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5383c5ee81141f74f8c05c78f3f4367b, type: 3}
-  m_Name: Bulbasaur
+  m_Name: Pidgey
   m_EditorClassIdentifier: 
-  Name: bulbasaur
+  Name: pidgey
   description: 
-  frontSprite: {fileID: 21300000, guid: 0f37bf3cf5680a64d863b5f155b2a597, type: 3}
-  backSprite: {fileID: 21300000, guid: aacaae602a38f884ab9e02e43de3736d, type: 3}
-  type1: 5
-  type2: 8
-  maxHp: 45
-  attack: 49
-  defence: 49
-  spAttack: 65
-  spDefence: 65
-  speed: 45
+  frontSprite: {fileID: 21300000, guid: e3a5fadd4fa5df4479668e916a7ee4d0, type: 3}
+  backSprite: {fileID: 21300000, guid: 663262825af62f14d9e2da8dba63a2d3, type: 3}
+  type1: 1
+  type2: 10
+  maxHp: 40
+  attack: 45
+  defence: 40
+  spAttack: 35
+  spDefence: 35
+  speed: 56
   learnableMoves:
   - moveBase: {fileID: 11400000, guid: ae0539c1c287f5547b0a5db329701702, type: 2}
     level: 1
-  - moveBase: {fileID: 11400000, guid: e1677249fc1ac0f43ac2f30b187ee2c0, type: 2}
+  - moveBase: {fileID: 11400000, guid: b905ad7414cb3c14b93e9377853f79ee, type: 2}
     level: 1
-  - moveBase: {fileID: 11400000, guid: d958aef64a155b043abc8fa15ed747cb, type: 2}
-    level: 5
+  - moveBase: {fileID: 11400000, guid: 06014a0f130b87642895855fc171104d, type: 2}
+    level: 3

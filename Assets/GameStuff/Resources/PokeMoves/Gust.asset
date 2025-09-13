@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ad7d09dc37e804f90ca5f9f3448f1b, type: 3}
-  m_Name: Scratch
+  m_Name: Gust
   m_EditorClassIdentifier: 
-  moveName: scratch
+  moveName: gust
   description: 
-  type: 1
+  type: 10
   power: 40
   accuracy: 100
   pp: 35
