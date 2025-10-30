@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ad7d09dc37e804f90ca5f9f3448f1b, type: 3}
   m_Name: Screech
   m_EditorClassIdentifier: 
-  moveName: 
+  moveName: screech
   description: 
   type: 1
   power: 0
   accuracy: 85
   pp: 40
+  category: 2
+  effects:
+    boosts:
+    - stat: 1
+      boost: -2
+  target: 0
