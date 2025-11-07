@@ -119,7 +119,11 @@ public enum Stat
     Defence, 
     SpAttack, 
     SpDefence, 
-    Speed
+    Speed,
+
+    //not actual stats
+    Accuracy,
+    Evasion
 }
 
 public class TypeChart

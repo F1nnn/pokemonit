@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ad7d09dc37e804f90ca5f9f3448f1b, type: 3}
-  m_Name: Lick
+  m_Name: BodySlam
   m_EditorClassIdentifier: 
-  moveName: lick
+  moveName: body slam
   description: 
-  type: 14
-  power: 30
+  type: 0
+  power: 85
   accuracy: 100
   alwaysHits: 0
-  pp: 30
+  pp: 15
   category: 0
   effects:
     boosts: []

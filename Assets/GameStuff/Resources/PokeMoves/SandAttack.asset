@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ad7d09dc37e804f90ca5f9f3448f1b, type: 3}
-  m_Name: Lick
+  m_Name: SandAttack
   m_EditorClassIdentifier: 
-  moveName: lick
+  moveName: sand attack
   description: 
-  type: 14
-  power: 30
+  type: 9
+  power: 0
   accuracy: 100
   alwaysHits: 0
   pp: 30
-  category: 0
+  category: 2
   effects:
-    boosts: []
+    boosts:
+    - stat: 5
+      boost: -1
     status: 0
     volatileStatus: 0
-  secondaries:
-  - boosts: []
-    status: 4
-    volatileStatus: 0
-    chance: 30
-    target: 0
   target: 0
